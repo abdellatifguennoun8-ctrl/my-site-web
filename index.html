@@ -64,7 +64,7 @@
         .lang-btn { cursor: pointer; font-weight: 600; font-size: 0.9rem; color: #ccc; }
         .lang-btn.active { color: var(--primary-color); text-decoration: underline; }
 
-        /* --- HERO SECTION (Background Image) --- */
+        /* --- HERO SECTION --- */
         .hero {
             height: 90vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=1920&auto=format&fit=crop');
@@ -86,11 +86,10 @@
         section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .center-text { text-align: center; margin-bottom: 60px; }
 
-        /* --- ABOUT SECTION (Split Layout) --- */
+        /* --- ABOUT SECTION --- */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .about-img-wrapper { position: relative; }
         .about-img-wrapper img { border-radius: var(--radius); box-shadow: var(--shadow); }
-        /* Badge d'expérience */
         .exp-badge {
             position: absolute; bottom: -20px; right: -20px; background: var(--bg-white);
             padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow);
@@ -99,7 +98,7 @@
         .exp-badge h4 { font-size: 2rem; color: var(--primary-color); font-weight: 800; line-height: 1; }
         .exp-badge span { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
 
-        /* --- SERVICES (Cards) --- */
+        /* --- SERVICES --- */
         .bg-light { background-color: var(--bg-light); width: 100%; max-width: 100%; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         
@@ -115,7 +114,7 @@
             line-height: 80px; border-radius: 50%; margin-left: auto; margin-right: auto;
         }
 
-        /* --- GALLERY (New Addition for "Images") --- */
+        /* --- GALLERY --- */
         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 40px; }
         .gallery-item { height: 250px; overflow: hidden; border-radius: var(--radius); position: relative; }
         .gallery-item img { height: 100%; width: 100%; transition: 0.5s; }
@@ -143,9 +142,61 @@
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2.5rem; }
             .about-grid, .contact-wrapper, .gallery-grid { grid-template-columns: 1fr; }
-            .menu { display: none; } /* Pour simplifier le code (menu hamburger non inclus dans cette version simple) */
+            .menu { display: none; }
             .lang-switch { margin: 0; padding: 0; border: none; position: absolute; right: 20px; top: 25px; }
             .exp-badge { position: relative; right: auto; bottom: auto; margin-top: 20px; width: 100%; border-left: none; border-top: 4px solid var(--accent-gold); }
+        }
+
+        /* --- SOCIAL MEDIA SECTION CSS --- */
+        .social-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .social-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #f0f2f5;
+            color: #555;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Effet rebond léger */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Animation & Couleurs au survol */
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .social-btn.whatsapp:hover { background-color: #25D366; }
+        .social-btn.email:hover { background-color: var(--primary-color); }
+        .social-btn.linkedin:hover { background-color: #0077B5; }
+        .social-btn.instagram:hover { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
         }
 
         /* Animation Simple */
@@ -281,6 +332,23 @@
         </section>
     </div>
 
+    <section class="social-section">
+        <h3 class="social-title" data-i18n="social_title">Contactez-moi</h3>
+        <div class="social-icons">
+            <a href="#" class="social-btn whatsapp" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:abdellatif.guennoun@email.com" class="social-btn email" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="#" class="social-btn linkedin" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-btn instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2024 Abdellatif GUENNOUN. <span data-i18n="footer">Todos los derechos reservados.</span></p>
     </footer>
@@ -316,7 +384,8 @@
                 contact_info_title: "Información",
                 address: "Mercado Central, Puesto 45<br>Ciudad, España",
                 form_btn: "Enviar Mensaje",
-                footer: "Todos los derechos reservados."
+                footer: "Todos los derechos reservados.",
+                social_title: "Sígueme / Contáctame"
             },
             en: {
                 nav_home: "Home",
@@ -346,7 +415,8 @@
                 contact_info_title: "Information",
                 address: "Central Market, Stall 45<br>City, Spain",
                 form_btn: "Send Message",
-                footer: "All rights reserved."
+                footer: "All rights reserved.",
+                social_title: "Follow / Contact Me"
             }
         };
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio professionnel de Abdellatif GUENNOUN, Carnicero / Butcher.">
+    <meta name="description" content="Portfolio profesional de Abdellatif GUENNOUN, Carnicero / Butcher Expert.">
     <title>Abdellatif GUENNOUN - Carnicero Expert</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -12,9 +12,9 @@
     <style>
         /* --- VARIABLES & RESET --- */
         :root {
-            --primary-color: #8a1c1c;   /* Rouge sombre élégant (Viande/Vin) */
-            --secondary-color: #2c3e50; /* Bleu nuit pour le texte */
-            --accent-gold: #c5a059;     /* Touche dorée "Premium" */
+            --primary-color: #8a1c1c;   /* Rojo oscuro elegante (Carne/Vino) */
+            --secondary-color: #2c3e50; /* Azul noche para texto */
+            --accent-gold: #c5a059;     /* Dorado "Premium" */
             --bg-white: #ffffff;
             --bg-light: #f8f9fa;
             --text-grey: #666666;
@@ -181,7 +181,7 @@
             color: #555;
             font-size: 1.5rem;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Effet rebond léger */
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
@@ -303,11 +303,11 @@
                     <h3 data-i18n="contact_info_title">Información</h3>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <span>+34 613 957469</span>
+                        <span>+34 613 957 469</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <span>abdellatif.guennoun@email.com</span>
+                        <span>abdellatifguennoun8@gmail.com</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -332,31 +332,35 @@
         </section>
     </div>
 
-    <secti<div class="social-icons">
+    <section class="social-section">
+        <div class="center-text">
+            <h2 class="social-title" data-i18n="social_title">Sígueme / Contáctame</h2>
+        </div>
+        <div class="social-icons">
             <a href="https://wa.me/34613957469" target="_blank" class="social-btn whatsapp" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
 
-            <a href="mailto:abdellatif.guennoun@email.com" class="social-btn email" aria-label="Email">
+            <a href="mailto:abdellatifguennoun8@gmail.com" class="social-btn email" aria-label="Email">
                 <i class="fas fa-envelope"></i>
             </a>
 
-            <a href="https://www.linkedin.com/in/votre-profil-linkedin/" target="_blank" class="social-btn linkedin" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/abdellatif-guennoun-60a5aa233" target="_blank" class="social-btn linkedin" aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
             </a>
 
-            <a href="https://www.instagram.com/votre_pseudo_insta/" target="_blank" class="social-btn instagram" aria-label="Instagram">
+            <a href="https://www.instagram.com/gn.abdellatif/" target="_blank" class="social-btn instagram" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
-        </div>
     </section>
+
     <footer>
         <p>&copy; 2024 Abdellatif GUENNOUN. <span data-i18n="footer">Todos los derechos reservados.</span></p>
     </footer>
 
     <script>
-        // Dictionnaire de traduction JSON
+        // Diccionario de traducción JSON
         const translations = {
             es: {
                 nav_home: "Inicio",
@@ -384,7 +388,7 @@
                 gallery_sub: "Una muestra de nuestro producto",
                 contact_title: "Contacto",
                 contact_info_title: "Información",
-                address: "Mercado Central, Puesto 45<br>Ciudad, España",
+                address: "Mercado Central, Puesto 45<br>Alicante, España",
                 form_btn: "Enviar Mensaje",
                 footer: "Todos los derechos reservados.",
                 social_title: "Sígueme / Contáctame"
@@ -415,26 +419,26 @@
                 gallery_sub: "A sample of our product",
                 contact_title: "Contact",
                 contact_info_title: "Information",
-                address: "Central Market, Stall 45<br>City, Spain",
+                address: "Central Market, Stall 45<br>Alicante, Spain",
                 form_btn: "Send Message",
                 footer: "All rights reserved.",
                 social_title: "Follow / Contact Me"
             }
         };
 
-        // Fonction pour changer la langue
+        // Función para cambiar el idioma
         function switchLang(lang) {
-            // 1. Mettre à jour le texte
+            // 1. Actualizar el texto
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) {
-                    // Utiliser innerHTML pour permettre les balises <br>
+                    // Usar innerHTML para permitir las etiquetas <br>
                     el.innerHTML = translations[lang][key]; 
                 }
             });
 
-            // 2. Mettre à jour l'état visuel des boutons
+            // 2. Actualizar el estado visual de los botones
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.innerText.toLowerCase() === lang) {
@@ -442,9 +446,9 @@
                 }
             });
 
-            // 3. Mettre à jour l'attribut HTML lang
+            // 3. Actualizar el atributo HTML lang
             document.documentElement.lang = lang;
         }
     </script>
 </body>
-</html>
+</html>      
